@@ -23,6 +23,7 @@
 		18F65F76195F56ED00B72B8A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F65F52195F56ED00B72B8A /* UIKit.framework */; };
 		18F65F7E195F56ED00B72B8A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18F65F7C195F56ED00B72B8A /* InfoPlist.strings */; };
 		18F65F80195F56ED00B72B8A /* myMoviesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F65F7F195F56ED00B72B8A /* myMoviesTests.m */; };
+		18F65F8B195F574100B72B8A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18F65F89195F574100B72B8A /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		18F65F7B195F56ED00B72B8A /* myMoviesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "myMoviesTests-Info.plist"; sourceTree = "<group>"; };
 		18F65F7D195F56ED00B72B8A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		18F65F7F195F56ED00B72B8A /* myMoviesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myMoviesTests.m; sourceTree = "<group>"; };
+		18F65F8A195F574100B72B8A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				18F65F6A195F56ED00B72B8A /* SecondViewController.m */,
 				18F65F6C195F56ED00B72B8A /* Images.xcassets */,
 				18F65F55195F56ED00B72B8A /* Supporting Files */,
+				18F65F89195F574100B72B8A /* Model.xcdatamodeld */,
 			);
 			path = myMovies;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				18F65F6B195F56ED00B72B8A /* SecondViewController.m in Sources */,
 				18F65F5F195F56ED00B72B8A /* AppDelegate.m in Sources */,
+				18F65F8B195F574100B72B8A /* Model.xcdatamodeld in Sources */,
 				18F65F68195F56ED00B72B8A /* FirstViewController.m in Sources */,
 				18F65F5B195F56ED00B72B8A /* main.m in Sources */,
 			);
@@ -486,6 +490,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		18F65F89195F574100B72B8A /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				18F65F8A195F574100B72B8A /* Model.xcdatamodel */,
+			);
+			currentVersion = 18F65F8A195F574100B72B8A /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 18F65F43195F56ED00B72B8A /* Project object */;
 }

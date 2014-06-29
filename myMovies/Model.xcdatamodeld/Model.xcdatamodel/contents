@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Actors" syncable="YES">
+        <attribute name="processID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Movies" syncable="YES"/>
+    </entity>
+    <entity name="Director" syncable="YES">
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Movies" syncable="YES"/>
+    </entity>
+    <entity name="Movies" syncable="YES"/>
+    <entity name="People" syncable="YES">
+        <attribute name="dateBorn" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateDeath" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="processID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="surname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Actors" syncable="YES"/>
+        <relationship name="relationship1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Director" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="People" positionX="-3105" positionY="-3249" width="198" height="148"/>
+        <element name="Actors" positionX="-2961" positionY="-2821" width="117" height="73"/>
+        <element name="Movies" positionX="-3348" positionY="-2772" width="128" height="43"/>
+        <element name="Director" positionX="-3332" positionY="-3046" width="128" height="58"/>
+    </elements>
+</model>
