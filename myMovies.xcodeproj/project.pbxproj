@@ -480,6 +480,7 @@
 				18F65F85195F56ED00B72B8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18F65F86195F56ED00B72B8A /* Build configuration list for PBXNativeTarget "myMoviesTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +489,7 @@
 				18F65F88195F56ED00B72B8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

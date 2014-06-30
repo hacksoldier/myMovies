@@ -1,26 +1,75 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Actors" syncable="YES">
-        <attribute name="processID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Movies" syncable="YES"/>
+        <relationship name="actors_movies" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Movies" inverseName="movies_actors" inverseEntity="Movies" syncable="YES"/>
+        <relationship name="actors_people" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="People" inverseName="people_actors" inverseEntity="People" syncable="YES"/>
     </entity>
     <entity name="Director" syncable="YES">
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Movies" syncable="YES"/>
+        <relationship name="director_movies" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Movies" inverseName="movies_director" inverseEntity="Movies" syncable="YES"/>
+        <relationship name="director_people" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="People" inverseName="people_director" inverseEntity="People" syncable="YES"/>
     </entity>
-    <entity name="Movies" syncable="YES"/>
-    <entity name="People" syncable="YES">
-        <attribute name="dateBorn" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="dateDeath" optional="YES" attributeType="Date" syncable="YES"/>
+    <entity name="Genre" syncable="YES">
+        <attribute name="genreID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="processID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="genre_genres" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Genres" inverseName="genres_genre" inverseEntity="Genres" syncable="YES"/>
+    </entity>
+    <entity name="Genres" syncable="YES">
+        <relationship name="genres_genre" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Genre" inverseName="genre_genres" inverseEntity="Genre" syncable="YES"/>
+        <relationship name="genres_movies" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Movies" inverseName="movies_genres" inverseEntity="Movies" syncable="YES"/>
+    </entity>
+    <entity name="Language" syncable="YES">
+        <attribute name="languageID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="language_languages" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Languages" inverseName="languages_language" inverseEntity="Languages" syncable="YES"/>
+    </entity>
+    <entity name="Languages" syncable="YES">
+        <relationship name="languages_language" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Language" inverseName="language_languages" inverseEntity="Language" syncable="YES"/>
+        <relationship name="languages_movies" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Movies" inverseName="movies_languages" inverseEntity="Movies" syncable="YES"/>
+    </entity>
+    <entity name="Movies" representedClassName="Movies" syncable="YES">
+        <attribute name="awads" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imdbID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="imdbRating" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="imdbVotes" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="metascore" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="moviesID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="plot" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="poster" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="rated" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="released" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="runtime" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="movies_actors" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Actors" inverseName="actors_movies" inverseEntity="Actors" syncable="YES"/>
+        <relationship name="movies_director" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Director" inverseName="director_movies" inverseEntity="Director" syncable="YES"/>
+        <relationship name="movies_genres" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Genres" inverseName="genres_movies" inverseEntity="Genres" syncable="YES"/>
+        <relationship name="movies_languages" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Languages" inverseName="languages_movies" inverseEntity="Languages" syncable="YES"/>
+        <relationship name="movies_writer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Writer" inverseName="writer_movies" inverseEntity="Writer" syncable="YES"/>
+    </entity>
+    <entity name="People" syncable="YES">
+        <attribute name="born" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="death" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="peopleID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="surname" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Actors" syncable="YES"/>
-        <relationship name="relationship1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Director" syncable="YES"/>
+        <relationship name="people_actors" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Actors" inverseName="actors_people" inverseEntity="Actors" syncable="YES"/>
+        <relationship name="people_director" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Director" inverseName="director_people" inverseEntity="Director" syncable="YES"/>
+        <relationship name="people_writer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Writer" inverseName="writer_people" inverseEntity="Writer" syncable="YES"/>
+    </entity>
+    <entity name="Writer" syncable="YES">
+        <relationship name="writer_movies" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Movies" inverseName="movies_writer" inverseEntity="Movies" syncable="YES"/>
+        <relationship name="writer_people" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="People" inverseName="people_writer" inverseEntity="People" syncable="YES"/>
     </entity>
     <elements>
-        <element name="People" positionX="-3105" positionY="-3249" width="198" height="148"/>
-        <element name="Actors" positionX="-2961" positionY="-2821" width="117" height="73"/>
-        <element name="Movies" positionX="-3348" positionY="-2772" width="128" height="43"/>
-        <element name="Director" positionX="-3332" positionY="-3046" width="128" height="58"/>
+        <element name="Movies" positionX="-4086" positionY="-3076" width="128" height="328"/>
+        <element name="Languages" positionX="-4079" positionY="-3276" width="128" height="73"/>
+        <element name="Language" positionX="-4086" positionY="-3523" width="128" height="88"/>
+        <element name="People" positionX="-3197" positionY="-3025" width="128" height="163"/>
+        <element name="Writer" positionX="-3582" positionY="-2808" width="128" height="73"/>
+        <element name="Actors" positionX="-3609" positionY="-3124" width="128" height="73"/>
+        <element name="Director" positionX="-3591" positionY="-2953" width="128" height="73"/>
+        <element name="Genre" positionX="-3314" positionY="-3447" width="128" height="88"/>
+        <element name="Genres" positionX="-3735" positionY="-3403" width="128" height="73"/>
     </elements>
 </model>
